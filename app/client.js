@@ -10,9 +10,10 @@ define([
   "hbs!templates/notice",
   "hbs!templates/names",
   "hbs!templates/popup",
+  "hbs!templates/twitter",
   "moment",
   "uuid"
-], function(Komanda, _, Helpers, Channels, Channel, ChannelView, ChannelsView, Message, Notice, NamesView, Popup, moment, uuid) {
+], function(Komanda, _, Helpers, Channels, Channel, ChannelView, ChannelsView, Message, Notice, NamesView, Popup, Twitter, moment, uuid) {
 
   var Client = function(session) {
     var self = this;
@@ -1214,6 +1215,8 @@ define([
       isAction: isAction
     };
 
+    var isTwitter = self.options.name === 'twitter';
+
     if (text.match(self.nick) && !self.me(nick)) {
       data.highlight = true;
     }
@@ -1232,7 +1235,11 @@ define([
       data.toChannel = Channel.isChannel(to);
       html = Notice(data);
     } else {
-      html = Message(data);
+      if (isTwitter) {
+        html = Twitter(data);
+      } else {
+        html = Message(data);
+      }
       // We check that the message received is not a pm and is not a highlight.
       if (data.flip !== true && data.highlight !== true) {
         Komanda.vent.trigger("komanda:soundnotification", "chat");

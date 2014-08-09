@@ -1,0 +1,41 @@
+<div id="{{server}}-{{uuid}}" class="message {{#if highlight}}highlight{{/if}} {{#unless nick}}system-message{{/unless}}">
+
+  <div class="body">
+    {{#if nick}}
+        {{#if message.host}}
+        <div style="float:left"><img class="twitter_profile_image" style="width:32px;height:32px;" src="{{message.host}}"></div>
+        {{/if}}
+    {{/if}}
+
+    <div class="content" style="margin-left:40px">
+      <p>
+        <div class="timestamp">
+          {{timestamp message.timestamp}}
+        </div>
+        {{#if nick}}
+        <span class="nickname {{#if highlight}}highlight{{/if}}" style="color:{{random-color nick }}">
+          {{nick}}{{#unless isAction}}:{{/unless}}
+        </span>
+        {{else}}
+        <span class="nickname {{#unless nick}}system-message{{/unless}}">
+        -->
+        </span>
+        {{/if}}
+      </p>
+
+      <p>
+        {{#if code}}
+        <span class="text code">
+          <pre>{{{text}}}</pre>
+        </span>
+        {{else}}
+          <span class="text {{#unless nick}}system-message{{/unless}}">
+            {{message text server uuid}}
+            <div class="embed-items"></div>
+          </span>
+        {{/if}}
+      </p>
+    </div>
+  </div>
+
+</div>
