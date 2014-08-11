@@ -48,11 +48,15 @@
   "scripts": {
     "postinstall": "node_modules/.bin/bower install"
   },
+  "window": {
+    "toolbar": true
+  },
   "dependencies": {
     "grunt": "^0.4.5",
     "grunt-exec": "^0.4.5",
     "highlight.js": "^8.0.0",
     "irc": "git+https://github.com/mephux/node-irc.git#komanda",
-    "marked": "git+https://github.com/gitterHQ/marked.git"
+    "marked": "git+https://github.com/gitterHQ/marked.git",
+    "gitter-marked": "^0.4.2"
   }
 }

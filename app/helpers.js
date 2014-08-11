@@ -6,6 +6,7 @@ define([
   
   var Helpers = {
     scrollUpdate: function(channel, force, delay) {
+        /*
       var objDiv = channel.get(0);
 
       if (objDiv) {
@@ -17,6 +18,7 @@ define([
           }, _.isNumber(delay) ? delay : 100);
         }
       }
+      */
     },
 
     init: function() {

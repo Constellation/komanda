@@ -78,7 +78,7 @@ define([
     EmbedVideo(Komanda.Embed.register);
     EmbedGist(Komanda.Embed.register);
     EmbedJsFiddle(Komanda.Embed.register);
-    EmbedTwitter(Komanda.Embed.register);
+    // EmbedTwitter(Komanda.Embed.register);
 
     Komanda.Embed.reload();
   };
