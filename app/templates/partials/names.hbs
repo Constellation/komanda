@@ -7,10 +7,14 @@
 <div class="break"></div>
 
   <div class="user-list scrollbar-hide">
-    {{#names}}
-    <div class="user" data-name="{{.}}">
-      {{.}}
+    {{#sortNames names}}
+    <div class="user" data-name="{{name}}" data-value="{{value}}">
+
+      {{{user-icon value}}}
+
+      {{name}}
     </div>
-    {{/names}}
+    {{/sortNames}}
   </div>
+
 </div>

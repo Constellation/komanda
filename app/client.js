@@ -1061,7 +1061,6 @@ define([
   };
 
   Client.prototype.updateNames = function(channel, newNames) {
-      /*
     var self = this;
 
     if (channel) {
@@ -1082,7 +1081,6 @@ define([
     }
 
     self.channelsView.render();
-    */
   };
 
   Client.prototype.channelsForUser = function(user) {
