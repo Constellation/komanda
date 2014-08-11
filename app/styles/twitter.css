@@ -22,3 +22,10 @@
     width: 32px;
     border-radius: 5px;
 }
+
+.embed-items img {
+    max-width: 400px;
+    max-height: 400px;
+    margin: 20px;
+    box-shadow: 3px 3px 3px rgba(150, 150, 150, 0.5);
+}
