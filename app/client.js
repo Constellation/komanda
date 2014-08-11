@@ -1236,6 +1236,12 @@ define([
       html = Notice(data);
     } else {
       if (isTwitter) {
+        if (data.highlight) {
+            new Notification('twitter', {
+                icon: data.message.host,
+                body: data.text
+            });
+        }
         html = Twitter(data);
       } else {
         html = Message(data);
