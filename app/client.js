@@ -1217,7 +1217,7 @@ define([
       isAction: isAction
     };
 
-    var isTwitter = self.options.name === 'twitter';
+    var isTwitter = self.options.name === "twitter";
 
     if (text.match(self.nick) && !self.me(nick)) {
       data.highlight = true;
