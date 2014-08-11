@@ -1,13 +1,13 @@
-<div id="{{server}}-{{uuid}}" class="message {{#if highlight}}highlight{{/if}} {{#unless nick}}system-message{{/unless}}">
+<div id="{{server}}-{{uuid}}" class="message twitter-message {{#if highlight}}highlight{{/if}} {{#unless nick}}system-message{{/unless}}">
 
   <div class="body">
     {{#if nick}}
         {{#if message.host}}
-        <div style="float:left"><img class="twitter_profile_image" style="width:32px;height:32px;" src="{{message.host}}"></div>
+        <div class="profile-image-container"><img class="profile-image" src="{{message.host}}"></div>
         {{/if}}
     {{/if}}
 
-    <div class="content" style="margin-left:40px">
+    <div class="content">
       <p>
         <div class="timestamp">
           {{timestamp message.timestamp}}
@@ -23,7 +23,7 @@
         {{/if}}
       </p>
 
-      <p>
+      <p class="text-container">
         {{#if code}}
         <span class="text code">
           <pre>{{{text}}}</pre>
