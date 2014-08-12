@@ -25,11 +25,11 @@ define("templates/helpers/sortNames", [
       users[value].push([user, value]);
     }
 
-    for (var key in users) {
-      if (users.hasOwnProperty(key)) {
-        users[key].sort(sortFn);
-      }
-    }
+    // for (var key in users) {
+    //   if (users.hasOwnProperty(key)) {
+    //     users[key].sort(sortFn);
+    //   }
+    // }
 
     _.each(symbols, function(symb) {
       _.each(users[symb], function(user) {
