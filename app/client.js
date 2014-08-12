@@ -1237,10 +1237,12 @@ define([
     } else {
       if (isTwitter) {
         if (data.highlight) {
-            new Notification('twitter', {
-                icon: data.message.host,
-                body: data.text
-            });
+            if (Komanda.Notification) {
+                new Komanda.Notification('twitter', {
+                    icon: data.message.host,
+                    body: data.text
+                });
+            }
         }
         html = Twitter(data);
       } else {
