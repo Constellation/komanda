@@ -226,16 +226,16 @@ module.exports = function(grunt) {
 
     exec: {
       win: {
-        cmd: '"build/cache/win/<%= nodewebkit.options.version %>/nw.exe" .'
+        cmd: '"build/cache/<%= nodewebkit.options.version %>/win/nw.exe" .'
       },
       mac: {
-        cmd: "build/cache/osx/<%= nodewebkit.options.version %>/node-webkit.app/Contents/MacOS/node-webkit ."
+        cmd: "build/cache/<%= nodewebkit.options.version %>/osx/node-webkit.app/Contents/MacOS/node-webkit ."
       },
       linux32: {
-        cmd: "build/cache/linux32/<%= nodewebkit.options.version %>/nw ."
+        cmd: "build/cache/<%= nodewebkit.options.version %>/linux32/nw ."
       },
       linux64: {
-        cmd: "build/cache/linux64/<%= nodewebkit.options.version %>/nw ."
+        cmd: "build/cache/<%= nodewebkit.options.version %>/linux64/nw ."
       },
       createDmg: {
         cmd: "dist/mac/yoursway-create-dmg/create-dmg --volname \"Komanda " + currentVersion + "\" --background ./dist/mac/background.png --window-size 480 540 --icon-size 128 --app-drop-link 240 370 --icon \"Komanda\" 240 110 ./build/releases/Komanda/mac/Komanda-" + currentVersion + "-Mac.dmg ./build/releases/Komanda/mac/"
