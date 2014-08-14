@@ -208,14 +208,17 @@ module.exports = function(grunt) {
 
     nodewebkit: {
       options: {
-        version: "0.10.1",
-        appName: "Komanda",
-        appVersion: "1.0.0.beta",
-        buildDir: "./build",
-        cacheDir: "./build/cache",
-        platforms: ["osx", "win", "linux32", "linux64"],
-        macIcns: "app/styles/images/logo/komanda.icns",
-        macCredits: "credits.html"
+        version: "0.9.2",
+        app_name: "Komanda",
+        app_version: "1.0.0.beta",
+        build_dir: "./build",
+        mac: true,
+        win: true,
+        linux32: true,
+        linux64: true,
+        mac_icns: "app/styles/images/logo/komanda.icns",
+        credits: "credits.html",
+        download_url: "http://komanda.io/nw/"
       },
       // src: ["./**/*"],
       src: [
@@ -229,7 +232,7 @@ module.exports = function(grunt) {
         cmd: '"build/cache/win/<%= nodewebkit.options.version %>/nw.exe" .'
       },
       mac: {
-        cmd: "build/cache/osx/<%= nodewebkit.options.version %>/node-webkit.app/Contents/MacOS/node-webkit ."
+        cmd: "build/cache/mac/<%= nodewebkit.options.version %>/node-webkit.app/Contents/MacOS/node-webkit ."
       },
       linux32: {
         cmd: "build/cache/linux32/<%= nodewebkit.options.version %>/nw ."
@@ -263,7 +266,7 @@ module.exports = function(grunt) {
           stderr: false,
           stdin: false
         },
-        command: "./build/cache/0.10.1/osx/node-webkit.app/Contents/MacOS/node-webkit . > /dev/null 2>&1"
+        command: "./build/cache/mac/0.9.2/node-webkit.app/Contents/MacOS/node-webkit . > /dev/null 2>&1"
       },
 
       linux64: {
@@ -272,7 +275,7 @@ module.exports = function(grunt) {
           stderr: false,
           stdin: false,
         },
-        command: "./build/cache/0.10.1/linux64/nw ./build/komanda-source/"
+        command: "./build/cache/linux64/0.9.2/nw ./build/komanda-source/"
       },
 
       linux32: {
@@ -281,7 +284,7 @@ module.exports = function(grunt) {
           stderr: false,
           stdin: false,
         },
-        command: "./build/cache/0.10.1/linux32/nw ./build/komanda-source/"
+        command: "./build/cache/linux32/0.9.2/nw ./build/komanda-source/"
       },
 
       create_dmg: {
