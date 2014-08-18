@@ -281,7 +281,7 @@ requirejs(["config"], function(require) {
 
         // Create default menus in OSX for copy/paste support.
         // https://github.com/rogerwang/node-webkit/wiki/Menu#menucreatemacbuiltinappname
-        if (requireNode('os').platform() === 'darwin') {
+        if (requireNode("os").platform() === "darwin") {
             var mb = new Komanda.gui.Menu({ type: "menubar" });
             if (mb.createMacBuiltin) {
                 mb.createMacBuiltin("Komanda");

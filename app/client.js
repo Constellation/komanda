@@ -1238,7 +1238,7 @@ define([
       if (isTwitter) {
         if (data.highlight) {
             if (Komanda.Notification) {
-                new Komanda.Notification('twitter', {
+                new Komanda.Notification("twitter", {
                     icon: data.message.host,
                     body: data.text
                 });
