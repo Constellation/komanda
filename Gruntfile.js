@@ -208,7 +208,7 @@ module.exports = function(grunt) {
 
     nodewebkit: {
       options: {
-        version: "0.10.1",
+        version: "0.10.2",
         appName: "Komanda",
         appVersion: "1.0.0.beta",
         buildDir: "./build",
@@ -263,7 +263,7 @@ module.exports = function(grunt) {
           stderr: false,
           stdin: false
         },
-        command: "./build/cache/0.10.1/osx/node-webkit.app/Contents/MacOS/node-webkit . > /dev/null 2>&1"
+        command: "./build/cache/0.10.2/osx/node-webkit.app/Contents/MacOS/node-webkit . > /dev/null 2>&1"
       },
 
       linux64: {
@@ -272,7 +272,7 @@ module.exports = function(grunt) {
           stderr: false,
           stdin: false,
         },
-        command: "./build/cache/0.10.1/linux64/nw ./build/komanda-source/"
+        command: "./build/cache/0.10.2/linux64/nw ./build/komanda-source/"
       },
 
       linux32: {
@@ -281,7 +281,7 @@ module.exports = function(grunt) {
           stderr: false,
           stdin: false,
         },
-        command: "./build/cache/0.10.1/linux32/nw ./build/komanda-source/"
+        command: "./build/cache/0.10.2/linux32/nw ./build/komanda-source/"
       },
 
       create_dmg: {
@@ -349,16 +349,16 @@ module.exports = function(grunt) {
     });
 
     grunt.task.run([
-    "clean:some",
-    "npm-install",
-    "jshint",
-    "processhtml",
-    "copy",
-    "requirejs",
-    "styles",
-    "cssmin",
-    "cleanBuildDir",
-    "nodewebkit"
+      "clean:some",
+      "npm-install",
+      "jshint",
+      "processhtml",
+      "copy",
+      "requirejs",
+      "styles",
+      "cssmin",
+      "cleanBuildDir",
+      "nodewebkit"
     ]);
   });
 

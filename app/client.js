@@ -421,6 +421,9 @@ define([
         message = "Komanda Error: You are not connected to the internet. Komanda will attempt to reconnect.";
       }
 
+      if( error.code == "EPROTO"){
+        message = "Komando Error: You have connected to the server with mismatching protocol.Please disable/enable SSL based on the server.";
+      }
       self.statusMessage(message);
     });
 
