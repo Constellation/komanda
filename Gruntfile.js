@@ -208,7 +208,7 @@ module.exports = function(grunt) {
 
     nodewebkit: {
       options: {
-        version: "0.10.2",
+        version: "0.10.5",
         appName: "Komanda",
         appVersion: "1.0.0.beta",
         buildDir: "./build",
