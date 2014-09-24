@@ -238,7 +238,7 @@ module.exports = function(grunt) {
         cmd: "build/cache/<%= nodewebkit.options.version %>/linux64/nw ."
       },
       createDmg: {
-        cmd: "dist/mac/yoursway-create-dmg/create-dmg --volname \"Komanda " + currentVersion + "\" --background ./dist/mac/background.png --window-size 480 540 --icon-size 128 --app-drop-link 240 370 --icon \"Komanda\" 240 110 ./build/releases/Komanda/mac/Komanda-" + currentVersion + "-Mac.dmg ./build/releases/Komanda/mac/"
+        cmd: "dist/mac/yoursway-create-dmg/create-dmg --volname \"Komanda " + currentVersion + "\" --background ./dist/mac/background.png --window-size 480 540 --icon-size 128 --app-drop-link 240 370 --icon \"Komanda\" 240 110 ./build/releases/Komanda/osx/Komanda-" + currentVersion + "-Mac.dmg ./build/releases/Komanda/osx/"
       },
       createWinInstall: {
         cmd: "makensis dist/windows/installer.nsi"
@@ -288,11 +288,32 @@ module.exports = function(grunt) {
         options: {
           stdout: true
         },
-        command: "./dist/mac/yoursway-create-dmg/create-dmg --volname \"Komanda " + _VERSION + "\" --background ./dist/mac/background.png --window-size 480 540 --icon-size 128 --app-drop-link 240 370 --icon \"Komanda\" 240 110 ./build/releases/Komanda/mac/Komanda-" + _VERSION + ".dmg ./build/releases/Komanda/mac/"
+        command: "./dist/mac/yoursway-create-dmg/create-dmg --volname \"Komanda " + _VERSION + "\" --background ./dist/mac/background.png --window-size 480 540 --icon-size 128 --app-drop-link 240 370 --icon \"Komanda\" 240 110 ./build/releases/Komanda/osx/Komanda-" + _VERSION + ".dmg ./build/releases/Komanda/osx/"
       }
+    },
 
+    revision: {
+      options: {
+        property: "revision",
+        ref: "HEAD",
+        short: true
+      }
+    },
+
+    replace: {
+      revision: {
+        options: {
+          patterns: [{
+            match: "GIT_REVISION",
+            replacement: "<%= revision %>"
+          }]
+        },
+        files: [{
+          src: "build/komanda-source/app/main.js",
+          dest: "build/komanda-source/app/main.js"
+        }]
+      }
     }
-
   });
 
   grunt.registerTask("cleanBuildDir", "remove unneeded files from the build dir.", function() {
@@ -335,6 +356,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-requirejs");
   grunt.loadNpmTasks("grunt-bbb-styles");
   grunt.loadNpmTasks("grunt-shell");
+  grunt.loadNpmTasks("grunt-git-revision");
+  grunt.loadNpmTasks("grunt-replace");
 
   grunt.registerTask("default", [
 
@@ -342,18 +365,29 @@ module.exports = function(grunt) {
 
   grunt.registerTask("build", function(platforms) {
     var targetPlatforms = parseBuildPlatforms(platforms);
-    // Overwrite initial nodewebkit.options.<target> bool with the
-    // one returned by parseBuildPlatforms
+    // Overwrite initial nodewebkit.options.platforms array with the
+    // platforms returned by parseBuildPlatforms
+    var targetPlatformsArray = [];
     Object.keys(targetPlatforms).forEach(function(target) {
-      grunt.config("nodewebkit.options." + target, targetPlatforms[target]);
+      if (targetPlatforms[target]) {
+        // grunt-node-webkit-builder doesn't understand `mac`,
+        // so map it to `osx` before adding it to the array
+        if (target === "mac") {
+          target = "osx";
+        }
+        targetPlatformsArray.push(target);
+      }
     });
+    grunt.config.set("nodewebkit.options.platforms", targetPlatformsArray);
 
     grunt.task.run([
       "clean:some",
-      "npm-install",
+      //"npm-install",
       "jshint",
       "processhtml",
       "copy",
+      "revision",
+      "replace:revision",
       "requirejs",
       "styles",
       "cssmin",
