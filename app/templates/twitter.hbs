@@ -13,9 +13,11 @@
           {{timestamp message.timestamp}}
         </div>
         {{#if nick}}
+        <a href="https://twitter.com/{{nick}}">
         <span class="nickname {{#if highlight}}highlight{{/if}}" style="color:{{random-color nick }}">
           {{nick}}{{#unless isAction}}:{{/unless}}
         </span>
+        </a>
         {{else}}
         <span class="nickname {{#unless nick}}system-message{{/unless}}">
         -->
