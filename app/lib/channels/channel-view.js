@@ -342,7 +342,7 @@ define([
       var server = this.model.get("server");
       var message = $(e.currentTarget).val();
 
-      if (e.charCode == 13) {
+      if (e.charCode === 0x0A && e.ctrlKey) {
         if (message.length <= 0) return false;
 
         var textarea = $(e.currentTarget).parent(".input").find("textarea");
