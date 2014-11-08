@@ -283,7 +283,8 @@ div.message{
 }
 
 div.message.highlight{
-	background-color: rgba(254,255,255,0.03);
+    background-color: #FFF6DF;
+	/* background-color: rgba(254,255,255,0.03); */
 }
 
 div.message .body .timestamp{

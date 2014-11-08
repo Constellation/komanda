@@ -633,7 +633,7 @@ div.message{
     display: block;
     position: relative;
     margin-bottom: 4px;
-    margin-top: 4px;
+    padding-top: 4px;
     padding-left: 5px;
     padding-right: 5px;
     word-wrap: break-word;
@@ -689,6 +689,7 @@ div.message .body .nickname{
     position: relative;
     display: inline-block;
     text-align: right;
+    font-weight: bold;
 }
 
 div.message .body .text{
