@@ -6,7 +6,8 @@
 .twitter-message .content {
     margin-left: 40px;
     padding-right: 10px !important;
-    border-bottom: solid #4d4d4d 1px;
+    /* border-bottom: solid #4d4d4d 1px; */
+    border-bottom: solid #DDD 1px;
 }
 
 .messages .twitter-message:nth-last-child(1) .content {
