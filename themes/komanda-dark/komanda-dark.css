@@ -4,7 +4,7 @@ html, body{
 	color: #fff;
 	background: #151a1f;
  	-webkit-font-smoothing: antialiased;
-	font: 1.0em 'Lato', Calibri, Arial, sans-serif;
+	font: 1.0em 'Noto Sans', 'Lato', Calibri, Arial, sans-serif;
 	overflow: hidden;
 	font-weight: normal;
 }
