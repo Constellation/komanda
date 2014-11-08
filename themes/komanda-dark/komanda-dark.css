@@ -296,6 +296,7 @@ div.message .body .nickname.highlight{
 }
 
 div.message .body .text{
+    line-height: 22px;
 	color: #3d3c40;
 }
 

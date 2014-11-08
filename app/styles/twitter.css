@@ -4,7 +4,7 @@
 }
 
 .twitter-message .content {
-    margin-left: 40px;
+    margin-left: 48px;
     padding-right: 10px !important;
     /* border-bottom: solid #4d4d4d 1px; */
     border-bottom: solid #DDD 1px;
@@ -19,8 +19,8 @@
 }
 
 .twitter-message .profile-image {
-    height: 32px;
-    width: 32px;
+    height: 36px;
+    width: 36px;
     border-radius: 5px;
 }
 
