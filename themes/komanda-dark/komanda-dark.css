@@ -304,12 +304,16 @@ div.message .body .text.system-message{
 	color: #717171;
 }
 
-div.message .body .text a{
-	color: #96b5c4;
+div.message .body .text a {
+	/* color: #96b5c4; */
+    color: #08c;
+    text-decoration: none;
 }
 
-div.message .body .text a:hover{
-	color: #abcddf;
+div.message .body .text a:hover {
+	/* color: #abcddf; */
+    color: #2a80b9;
+    text-decoration: underline;
 }
 
 div.message .body .text .embed-items .show-more{
@@ -324,7 +328,7 @@ div.message .body .text .embed-items .show-more{
 	background: -ms-linear-gradient(top, rgba( 255,255,255,0.06) 0%,rgba( 255,255,255,0) 100%);
 	background: linear-gradient(top, rgba( 255,255,255,0.06) 0%,rgba( 255,255,255,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434343', endColorstr='#2d2e34',GradientType=0 );
-	color: #fff;
+	/* color: #fff; */
 	font-size: 0.9em;
 }
 
@@ -421,7 +425,7 @@ div.form-box textarea {
 	background-color: #21252a;
 	border: 1px solid #4d5967;
 	font-size: 0.9em;
-	color: #fff;
+	/* color: #fff; */
 }
 
 /* @end */
@@ -468,7 +472,7 @@ div.form-box textarea {
 	background-image: linear-gradient(top, rgb(255, 38, 0), rgb(217, 30, 14));
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ff2600', EndColorStr='#d91e0e');
 	text-shadow: rgba(0,0,0,0.5) 0 1px 0;
-	color: #fff;
+	/* color: #fff; */
 }
 
 /* @end */
