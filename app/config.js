@@ -5,7 +5,7 @@ requirejs.config({
     "vendor": "../vendor",
     "almond": "../vendor/bower/almond/almond",
     "jquery": "../vendor/bower/jquery/dist/jquery",
-    "jquery-ui": "../vendor/bower/jquery-ui/ui/jquery-ui",
+    "jquery-ui": "../vendor/bower/jquery-ui/jquery-ui",
     "bluebird": "../vendor/bower/bluebird/js/browser/bluebird",
     "autolink": "lib/deps/autolink",
     "tabcomplete": "lib/deps/tab-complete",
